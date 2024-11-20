@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\title{Regulation of Risky Posts on a Social Network}
+\author{}
+\date{}
+
+\maketitle
+
+\section{Introduction}
+
+To efficiently manage and prioritize posts with illegal content on a high-traffic social network, we propose a system that ensures the regulatory team addresses the highest-risk posts first. Each post is represented by a unique integer ID.
+
+\section{Proposed Solution}
+
+Our solution involves using a sorted linked list as the primary data structure. This linked list maintains posts in descending order based on their risk levels, placing the highest-risk posts at the forefront. When a new post arrives, it is inserted into the linked list at the appropriate position corresponding to its risk level. This method allows for dynamic insertion without the need to re-sort the entire dataset, which is essential given the continuous influx of millions of posts daily.
+
+Posts with identical risk levels are further sorted based on their unique IDs to ensure a consistent and unique ordering. This approach facilitates efficient processing by the regulatory team, as they can always access and address the most critical posts at the beginning of the list.
+
+\section{Alternative Data Structures Considered}
+
+We considered alternative data structures such as queues (FIFO), but they do not prioritize higher-risk posts, and hash tables, which offer quick access by ID but lack the ability to sort by risk levels. Sorting algorithms like quicksort were also discussed but are less practical for real-time processing of a vast and continuously growing dataset.
+
+\section{Conclusion}
+
+In summary, the sorted linked list provides an effective balance between efficiency, scalability, and prioritization. It ensures that the regulatory team can promptly focus on the most critical posts, maintaining performance even as the volume of posts increases.
+
+\end{document}
